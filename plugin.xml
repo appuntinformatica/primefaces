@@ -1,0 +1,12 @@
+<plugin name='primefaces' version='0.1' grailsVersion='2.3.7 &gt; *'>
+  <author>Andrea Minnucci</author>
+  <authorEmail>andreaminnucci77@gmail.com</authorEmail>
+  <title>Primefaces Plugin</title>
+  <description>Brief summary/description of the plugin.
+</description>
+  <documentation>http://grails.org/plugin/primefaces</documentation>
+  <type>PrimefacesGrailsPlugin</type>
+  <resources>
+    <resource>PrimefacesBootStrap</resource>
+  </resources>
+</plugin>
