@@ -37,12 +37,9 @@
 		grails.plugins.primefaces.beans.packages = [ "com.company.demo.beans" ]
 				</code>
 			</pre>
-
-			
-			<h2><a class="anchor" href="#internationalization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Internationalization</h2>
-			<div>
-				To access resources grails/i18n project, in the Bean classes you have to instantiate the class <code>grails.plugins.primefaces.MessageSourceBean</code>
-				with the annotation <code>javax.faces.bean.ManagedProperty</code>, and in the xhtml page you have to use:
+			<h2>Internationalization</h2>
+			To access resources grails/i18n project, in the Bean classes you have to instantiate the class <code>grails.plugins.primefaces.MessageSourceBean</code>
+			with the annotation <code>javax.faces.bean.ManagedProperty</code>, and in the xhtml page you have to use:
 				<pre>
 					<code>
 	<b><u>Bean Source</u></b>:
@@ -59,9 +56,7 @@
 		#{message.i18n(code, args, locale)}
 					</code>
 				</pre>
-			</div>
-			
-			<h2><a class="anchor" href="#grails-service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Grails Service</h2>
+			<h2>Grails Service</h2>
 			<div>
 				To access the domain class of grails, you must create a service, and define within the bean by annotating <code>grails.plugins.primefaces.GrailsService</code>
 				<br>Example:
