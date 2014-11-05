@@ -13,7 +13,7 @@
 		<br>
 		Source code can be found at <a href="https://github.com/andreaminnucci77/primefaces">Github</a>
 		<h2>Installation</h2>
-		Install the Primefaces plugin in any Grails project by setting the plugin-dependency in the BuildConfig.groovy file, e.g.:
+		Install the Primefaces plugin in any Grails project by setting the plugin-dependency in the <b>BuildConfig.groovy</b> file, e.g.:
 		<pre>
 			<code>
 	grails.project.dependency.resolution = {
@@ -30,7 +30,7 @@
 		<h2>Description</h2>
 		<div>
 			You can either create a bean class in Java or Groovy, and the you make the primefaces pages into web-app folder.
-			Configure, in the <code>Config.groovy</code>, the list of packages which create the bean class.
+			Configure, in the <b>Config.groovy</b>, the list of packages which create the bean class.
 			<br>Example:
 			<pre>
 				<code>
@@ -38,14 +38,14 @@
 				</code>
 			</pre>
 			<h2>Internationalization</h2>
-			To access resources grails/i18n project, in the Bean classes you have to instantiate the class <code>grails.plugins.primefaces.MessageSourceBean</code>
-			with the annotation <code>javax.faces.bean.ManagedProperty</code>, and in the xhtml page you have to use:
+			To access resources grails/i18n project, in the Bean classes you have to instantiate the class <b>grails.plugins.primefaces.MessageSourceBean</b>
+			with the annotation <b>javax.faces.bean.ManagedProperty</b>, and in the xhtml page you have to use:
 			<pre>
 				<code>
 	<b><u>Bean Source</u></b>:
 		@ManagedProperty(value = "#{message}")
 		MessageSourceBean message
-
+		<br>
 	<b><u>XTHML Page</u></b>:
 		#{message.i18n(code)} or
 		#{message.i18n(code, args)} or
@@ -53,7 +53,7 @@
 				</code>
 			</pre>
 			<h2>Grails Service</h2>
-			To access the domain class of grails, you must create a service, and define within the bean by annotating <code>grails.plugins.primefaces.GrailsService</code>
+			To access the domain class of grails, you must create a service, and define within the bean by annotating <b>grails.plugins.primefaces.GrailsService</b>
 			<br>Example:
 			<pre>
 				<code>
