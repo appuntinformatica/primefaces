@@ -63,7 +63,7 @@
 			</pre>
 			<br>
 			All pages created with primefaces framework can be reached under the link:
-				<a href="localhost:8080/appname/faces">localhost:8080/appname/faces</a>
+				<a href="http://localhost:8080/appname/faces">http://localhost:8080/appname/faces</a>
 			<br>
 			<h2>Example</h2>
 			Example project can be found at <a href="https://github.com/andreaminnucci77/grails-primefaces-demo">Github</a>
