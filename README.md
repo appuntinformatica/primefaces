@@ -12,10 +12,7 @@
 		</ul>
 		<br>
 		Source code can be found at <a href="https://github.com/andreaminnucci77/primefaces">Github</a>
-
-
 		<h2>Installation</h2>
-		
 		Install the Primefaces plugin in any Grails project by setting the plugin-dependency in the <code>BuildConfig.groovy</code>s file , e.g.:
 		<pre>
 			<code>
