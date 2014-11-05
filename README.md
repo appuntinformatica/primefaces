@@ -15,10 +15,10 @@
 
 
 		<h2>Installation</h2>
-		<div>
-			Install the Primefaces plugin in any Grails project by setting the plugin-dependency in the <code>BuildConfig.groovy</code>s file , e.g.:
-			<pre>
-				<code>
+		
+		Install the Primefaces plugin in any Grails project by setting the plugin-dependency in the <code>BuildConfig.groovy</code>s file , e.g.:
+		<pre>
+			<code>
 		grails.project.dependency.resolution = {
 		  ...
 		  plugins {
@@ -28,9 +28,9 @@
 		  }
 		  ...
 		}
-				</code>
-			</pre>
-		</div>
+			</code>
+		</pre>
+		
 		
 		<h2><a class="anchor" href="#description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h2>
 		<div>
