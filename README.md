@@ -16,15 +16,15 @@
 		Install the Primefaces plugin in any Grails project by setting the plugin-dependency in the BuildConfig.groovy file, e.g.:
 		<pre>
 			<code>
-		grails.project.dependency.resolution = {
-		  ...
-		  plugins {
-			...
-			compile ":primefaces:0.1"
-			...
-		  }
-		  ...
-		}
+	grails.project.dependency.resolution = {
+	  ...
+	  plugins {
+		...
+		compile ":primefaces:0.1"
+		...
+	  }
+	  ...
+	}
 			</code>
 		</pre>
 		<h2>Description</h2>
@@ -34,50 +34,39 @@
 			<br>Example:
 			<pre>
 				<code>
-		grails.plugins.primefaces.beans.packages = [ "com.company.demo.beans" ]
+	grails.plugins.primefaces.beans.packages = [ "com.company.demo.beans" ]
 				</code>
 			</pre>
 			<h2>Internationalization</h2>
 			To access resources grails/i18n project, in the Bean classes you have to instantiate the class <code>grails.plugins.primefaces.MessageSourceBean</code>
 			with the annotation <code>javax.faces.bean.ManagedProperty</code>, and in the xhtml page you have to use:
-				<pre>
-					<code>
+			<pre>
+				<code>
 	<b><u>Bean Source</u></b>:
 		@ManagedProperty(value = "#{message}")
 		MessageSourceBean message
-					</code>
-				</pre>
-				
-				<pre>
-					<code>
+
 	<b><u>XTHML Page</u></b>:
 		#{message.i18n(code)} or
 		#{message.i18n(code, args)} or
 		#{message.i18n(code, args, locale)}
-					</code>
-				</pre>
+				</code>
+			</pre>
 			<h2>Grails Service</h2>
-			<div>
-				To access the domain class of grails, you must create a service, and define within the bean by annotating <code>grails.plugins.primefaces.GrailsService</code>
-				<br>Example:
-				<pre>
-					<code>
-		@GrailsService(name = "anagraphicService")
-		AnagraphicService anagraphicService
-					</code>
-				</pre>
-			</div>
+			To access the domain class of grails, you must create a service, and define within the bean by annotating <code>grails.plugins.primefaces.GrailsService</code>
+			<br>Example:
+			<pre>
+				<code>
+	@GrailsService(name = "anagraphicService")
+	AnagraphicService anagraphicService
+				</code>
+			</pre>
 			<br>
-			<div>
-				All pages created with primefaces framework can be reached under the link:
+			All pages created with primefaces framework can be reached under the link:
 				<a href="localhost:8080/appname/faces">localhost:8080/appname/faces</a>
-			</div>
 			<br>
-			
-			<h2><a class="anchor" href="#example " aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h2>
-			<div>
-				Example project can be found at <a href="https://github.com/andreaminnucci77/grails-primefaces-demo">Github</a>
-			</div>
+			<h2>Example</h2>
+			Example project can be found at <a href="https://github.com/andreaminnucci77/grails-primefaces-demo">Github</a>
 		</div>
 	</div>
 </body>
