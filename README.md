@@ -14,7 +14,7 @@
 		Source code can be found at <a href="https://github.com/andreaminnucci77/primefaces">Github</a>
 	</div>
 
-	<h2><a class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+	<h2>Installation</h2>
 	<div>
 		Install the Primefaces plugin in any Grails project by setting the plugin-dependency in the <code>BuildConfig.groovy</code>s file , e.g.:
 		<pre>
