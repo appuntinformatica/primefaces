@@ -37,34 +37,6 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
         // runtime 'mysql:mysql-connector-java:5.1.27'
-		
-		
-		
-		/*
-____________________________________________
-grails  springWebFlowVersion  springVersion
---------------------------------------------
-        2.3.0.RELEASE         3.0.5.RELEASE
-        2.3.1.RELEASE         3.1.1.RELEASE
-        2.3.2.RELEASE         3.2.1.RELEASE
-        2.3.3.RELEASE         4.0.0.RELEASE
-        2.3.4.RELEASE         4.0.0.RELEASE
-2.4.2   2.4.0.RELEASE         4.0.2.RELEASE
-2.4.3   2.4.1.RELEASE	      4.0.6.RELEASE
-
-
-_______________________________
-Grails          springVersion
--------------------------------
-2.1.0           3.1.0.RELEASE
-2.2.4           3.1.4.RELEASE
-2.3.7           3.2.8.RELEASE
-2.4.2           4.0.5.RELEASE
-2.4.3           4.0.6.RELEASE
-2.4.4           4.0.7.RELEASE
-_______________________________
-
-*/
 
         compile 'org.springframework.webflow:spring-webflow:2.4.1.RELEASE'
         compile 'org.springframework.webflow:spring-faces:2.4.1.RELEASE'
