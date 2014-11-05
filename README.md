@@ -13,7 +13,7 @@
 		<br>
 		Source code can be found at <a href="https://github.com/andreaminnucci77/primefaces">Github</a>
 		<h2>Installation</h2>
-		Install the Primefaces plugin in any Grails project by setting the plugin-dependency in the <code>BuildConfig.groovy</code>s file , e.g.:
+		Install the Primefaces plugin in any Grails project by setting the plugin-dependency in the BuildConfig.groovy file, e.g.:
 		<pre>
 			<code>
 		grails.project.dependency.resolution = {
@@ -27,9 +27,7 @@
 		}
 			</code>
 		</pre>
-		
-		
-		<h2><a class="anchor" href="#description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h2>
+		<h2>Description</h2>
 		<div>
 			You can either create a bean class in Java or Groovy, and the you make the primefaces pages into web-app folder.
 			Configure, in the <code>Config.groovy</code>, the list of packages which create the bean class.
