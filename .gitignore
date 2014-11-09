@@ -1,0 +1,4 @@
+target/
+plugin.xml
+grails-primefaces-*.zip
+grails-primefaces-*.zip.sha1
