@@ -1,0 +1,1 @@
+rmdir /S /Q %USERPROFILE%\.m2\repository\org\grails\plugins\primefaces

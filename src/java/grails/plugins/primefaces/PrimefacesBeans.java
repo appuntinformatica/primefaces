@@ -7,14 +7,12 @@ import java.lang.reflect.Field;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
 import org.apache.log4j.Logger;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.config.BeanDefinition;
+import static org.springframework.beans.factory.config.BeanDefinition.SCOPE_SINGLETON;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.context.ApplicationContext;
@@ -83,20 +81,7 @@ public class PrimefacesBeans {
                 beanDefinition.setLazyInit(false);  
                 beanDefinition.setAbstract(false);  
                 beanDefinition.setAutowireCandidate(true);
-                
-                String scope = null;
-                for (Annotation annotation : clazz.getAnnotations()) {
-                    if (annotation.annotationType() == ViewScoped.class) {
-                        scope = "view";
-                    } else if (annotation.annotationType() == SessionScoped.class) {
-                        scope = "session";
-                    } else if (annotation.annotationType() == RequestScoped.class) {
-                        scope = "request";
-                    }
-                }
-                log.debug("scope = " + scope);
-                if (scope != null)
-                    beanDefinition.setScope(scope);
+                beanDefinition.setScope(SCOPE_SINGLETON);
                 
                 String beanName = mb.name();
                 if (beanName.equals("")) {
