@@ -65,6 +65,14 @@
 			All pages created with primefaces framework can be reached under the link:
 				<a href="http://localhost:8080/appname/faces">http://localhost:8080/appname/faces</a>
 			<br>
+			<h2>Command</h2>
+			After defining the domain class, you can automatically create service classes and bean related to it using the following command:
+			<pre>
+				<code>
+				grails pf-generate-all com.company.demo.Anagraphic
+				</code>
+			</pre>
+			Note: the creation of the relevant page xhtml is under construction
 			<h2>Example</h2>
 			Example project can be found at <a href="https://github.com/andreaminnucci77/grails-primefaces-demo">Github</a>
 		</div>

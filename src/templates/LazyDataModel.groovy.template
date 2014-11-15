@@ -1,0 +1,40 @@
+package ${packageName}.beans
+
+import org.apache.log4j.Logger
+
+import ${packageName}.${domainClassName}
+import ${packageName}.${domainClassName}Service
+
+import org.primefaces.model.LazyDataModel
+import org.primefaces.model.SortOrder
+
+public class ${domainClassName}LazyDataModel extends LazyDataModel<${domainClassName}> {
+    Logger log = Logger.getLogger(${domainClassName}LazyDataModel.class)
+            
+    ${domainClassName}Service ${propertyName}Service
+    
+    public ${domainClassName}LazyDataModel(${domainClassName}Service ${propertyName}Service) {
+        this.${propertyName}Service = ${propertyName}Service
+    }
+    
+    @Override
+    public List<${domainClassName}> load(int first, int pageSize, String sortField, SortOrder sortOrder, Map<String, String> filters) { 
+        log.debug("first = " + first + ", pageSize = " + pageSize + ", sortField = " + sortField + ", sortOrder = " + sortOrder + ", filters = " + filters)
+        def ${propertyName}s
+        if (!sortField) {
+            if (filters.size() == 0)
+                ${propertyName}s = ${propertyName}Service.list(pageSize, first)
+            else
+                ${propertyName}s = ${propertyName}Service.filter(filters, pageSize, first)
+        } else {
+            String order = sortOrder == SortOrder.ASCENDING ? "asc" : "desc"
+            if (filters.size() == 0)
+                ${propertyName}s = ${propertyName}Service.list(pageSize, first, sortField, order)
+            else
+                ${propertyName}s = ${propertyName}Service.filter(filters, pageSize, first, sortField, order)
+        }
+        this.setRowCount(${propertyName}s.totalCount)
+        return ${propertyName}s.list
+    }
+}
+

@@ -1,0 +1,66 @@
+package ${packageName}
+
+import grails.transaction.Transactional
+import org.springframework.validation.FieldError
+
+@Transactional
+class ${domainClassName}Service {
+
+    ${domainClassName} get(Long id) {
+        ${domainClassName}.get(id)
+    }
+
+    def list() {
+        ${domainClassName}.list()
+    }
+
+    def list(int max, int offset) {
+        log.debug "[list] max = \${max}, offset = \${offset}"
+        ${domainClassName}.list(max: max, offset: offset)
+    }
+
+    def list(int max, int offset, String sort, String order) {
+        log.debug "[list] max = \${max}, offset = \${offset}, sort = \${sort}, order = \${order}"
+        ${domainClassName}.list(max: max, offset: offset, sort: sort, order: order)
+    }
+
+    boolean delete(Long id) {
+        log.debug "[delete] id = \${id}"
+        def ${propertyName} = ${domainClassName}.get(id)
+        ${propertyName}.delete(flush: true)
+    }
+	    
+    List<FieldError> save(${domainClassName} ${propertyName}) {
+        log.debug "[save] id = \${propertyName?.id}"
+        def errors = null
+        if (${propertyName}.save(flush: true)) {
+            return null
+        } else {
+            ${propertyName}.errors.allErrors
+        }
+    }
+    
+    def filter(Map filters, int max, int offset) {
+        def c = ${domainClassName}.createCriteria()
+        c.list (max: max, offset: offset) {
+            and {
+                filters.each { k, v ->
+                    ilike(k, "%\${v}%")
+                }
+            }
+        }
+    }
+    
+    def filter(Map filters, int max, int offset, String sort, String order) {
+        def c = ${domainClassName}.createCriteria()
+        c.list (max: max, offset: offset) {
+            and {
+                filters.each { k, v ->
+                    ilike(k, "%\${v}%")
+                }
+            }
+            order(sort, order)
+        }
+    }
+
+}

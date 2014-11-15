@@ -6,9 +6,8 @@ class PrimefacesGrailsPlugin {
     private Logger log = LoggerFactory.getLogger('grails.plugins.primefaces.PrimefacesGrailsPlugin')
     
     // the plugin version
-    def version = "0.1"
-    // rmdir /S /Q %USERPROFILE%\.m2\repository\org\grails\plugins\primefaces
-    
+    def version = "0.3"
+
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "2.3.7 > *"
     // resources that are excluded from plugin packaging
@@ -16,12 +15,11 @@ class PrimefacesGrailsPlugin {
         "grails-app/views/error.gsp"
     ]
 
-    // TODO Fill in these fields
     def title = "Primefaces Plugin" // Headline display name of the plugin
     def author = "Andrea Minnucci"
     def authorEmail = "andreaminnucci77@gmail.com"
     def description = '''\
-Brief summary/description of the plugin.
+Grails plugin integrating Primefaces into the Grails project
 '''
 
     // URL to the plugin's documentation
@@ -30,7 +28,7 @@ Brief summary/description of the plugin.
     // Extra (optional) plugin metadata
 
     // License: one of 'APACHE', 'GPL2', 'GPL3'
-//    def license = "APACHE"
+    def license = "APACHE"
 
     // Details of company behind the plugin (if there is one)
 //    def organization = [ name: "My Company", url: "http://www.my-company.com/" ]
@@ -74,16 +72,6 @@ Brief summary/description of the plugin.
 
     def doWithSpring = {
         // TODO Implement runtime spring config (optional)
-        /*
-        log.info application.config?.grails?.plugins?.primefaces?.beans?.packages
-        if (application.config?.grails?.plugins?.primefaces?.beans?.packages) {
-            def packagesForScanning = application.config.grails.plugins.primefaces.beans.packages
-            packagesForScanning.each { packageName ->
-                log.info "\t " + packageName
-                grails.plugins.primefaces.WebApplicationUtils.registryPrimefacesBeans(packageName);	
-            }
-        }
-        */
     }
 
     def doWithDynamicMethods = { ctx ->

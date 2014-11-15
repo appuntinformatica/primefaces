@@ -1,0 +1,75 @@
+package ${packageName}.beans
+
+import org.apache.log4j.Logger
+import javax.annotation.PostConstruct
+
+import ${packageName}.${domainClassName}
+import ${packageName}.${domainClassName}Service
+
+import grails.plugins.primefaces.GrailsService
+import grails.plugins.primefaces.MessageSourceBean
+
+import javax.faces.bean.ManagedBean
+import javax.faces.bean.ManagedProperty
+import javax.faces.bean.SessionScoped
+import javax.faces.context.FacesContext
+
+import org.primefaces.event.SelectEvent
+import org.primefaces.model.LazyDataModel
+
+import org.springframework.validation.FieldError
+
+@ManagedBean(name = "${propertyName}MB")
+@SessionScoped
+class ${domainClassName}ManagedBean implements Serializable {
+    Logger log = Logger.getLogger(${domainClassName}ManagedBean.class)
+        
+    @PostConstruct
+    public void init() {
+        ${propertyName}s = new ${domainClassName}LazyDataModel(${propertyName}Service)
+    }
+    
+    @ManagedProperty(value = "#{message}")
+    MessageSourceBean message
+    
+    @GrailsService(name = "${propertyName}Service")
+    ${domainClassName}Service ${propertyName}Service
+    
+    ${domainClassName} ${propertyName}
+    LazyDataModel<${domainClassName}> ${propertyName}s
+
+    public void save() {
+        log.debug(${propertyName})        
+        boolean updated = (${propertyName}.id != null)
+        List<FieldError> errors = get${domainClassName}Service().save(${propertyName})
+        if (errors == null) {
+            if (updated == true) {
+                message.infoPF("pf.default.updated.message", null, "${domainClassName}")
+            } else {
+                message.infoPF("pf.default.created.message", null, "${domainClassName}")
+            }
+            reset()
+        } else {
+            for (FieldError error : errors) {
+                message.errorMessagePF("", message.getErrorMessage(error))
+            }
+        }
+    }
+    
+    public void reset() {
+        ${propertyName} = new ${domainClassName}()
+    }
+    
+    public void delete(Long id) {
+        get${domainClassName}Service().delete(id)
+        message.infoPF("pf.default.deleted.message", null, "${domainClassName}")
+    }
+
+    public void onRowSelect(SelectEvent event) {
+        Long id = ((${domainClassName}) event.getObject()).getId()
+        log.info("id = " + id)
+        ${propertyName} = get${domainClassName}Service().get(id)
+    }
+
+}
+

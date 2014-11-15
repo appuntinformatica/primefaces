@@ -46,6 +46,8 @@ grails.project.dependency.resolution = {
         compile 'javax.servlet.jsp.jstl:jstl-api:1.2'
 
         compile 'org.primefaces:primefaces:5.1'
+        compile 'org.primefaces.extensions:primefaces-extensions:3.0.0'
+
     }
 
     plugins {
