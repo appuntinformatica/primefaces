@@ -69,7 +69,7 @@
 			After defining the domain class, you can automatically create service classes and bean related to it using the following command:
 			<pre>
 				<code>
-				grails pf-generate-all com.company.demo.Anagraphic
+	grails pf-generate-all com.company.demo.Anagraphic
 				</code>
 			</pre>
 			Note: the creation of the relevant page xhtml is under construction

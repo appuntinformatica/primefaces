@@ -6,7 +6,7 @@ class PrimefacesGrailsPlugin {
     private Logger log = LoggerFactory.getLogger('grails.plugins.primefaces.PrimefacesGrailsPlugin')
     
     // the plugin version
-    def version = "0.3"
+    def version = "0.1"
 
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "2.3.7 > *"
@@ -23,7 +23,7 @@ Grails plugin integrating Primefaces into the Grails project
 '''
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/primefaces"
+    def documentation = "https://github.com/andreaminnucci77/primefaces"
 
     // Extra (optional) plugin metadata
 
@@ -37,10 +37,10 @@ Grails plugin integrating Primefaces into the Grails project
 //    def developers = [ [ name: "Joe Bloggs", email: "joe@bloggs.net" ]]
 
     // Location of the plugin's issue tracker.
-//    def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPMYPLUGIN" ]
+    def issueManagement = [ system: "Github", url: "https://github.com/andreaminnucci77/primefaces/issues" ]
 
     // Online location of the plugin's browseable source code.
-//    def scm = [ url: "http://svn.codehaus.org/grails-plugins/" ]
+    def scm = [ url: "https://github.com/andreaminnucci77/primefaces" ]
 
     def doWithWebDescriptor = { xml ->
         // TODO Implement additions to web.xml (optional), this event occurs before
