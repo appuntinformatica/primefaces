@@ -11,12 +11,17 @@
 
 try {
     def baseDir = grails.util.BuildSettingsHolder.settings.baseDir
-    
-    ant.copy(
-        file:"${primefacesPluginDir}/scripts/faces-config.xml",
-        todir:"${baseDir}/web-app/WEB-INF",
-        overwrite: true
-    )
+
+   	ant.copy (
+		file:"${primefacesPluginDir}/scripts/faces-config.xml",
+		todir:"${baseDir}/web-app/WEB-INF",
+		overwrite: true
+	)
+
+	ant.copy(todir: "${baseDir}/web-app/js/primefaces") {
+		fileset(dir: "${primefacesPluginDir}/web-app/web-app/js/primefaces")
+	}
+	
 } catch (Throwable e) {
     e.printStackTrace()
 }
