@@ -41,11 +41,11 @@ grails.project.dependency.resolution = {
         compile 'org.springframework.webflow:spring-webflow:2.4.1.RELEASE'
         compile 'org.springframework.webflow:spring-faces:2.4.1.RELEASE'
 
-        compile 'org.apache.myfaces.core:myfaces-api:2.2.5'
-        compile 'org.apache.myfaces.core:myfaces-impl:2.2.5'
+        compile 'org.apache.myfaces.core:myfaces-api:2.2.8'
+        compile 'org.apache.myfaces.core:myfaces-impl:2.2.8'
         compile 'javax.servlet.jsp.jstl:jstl-api:1.2'
 
-        compile 'org.primefaces:primefaces:5.1'
+        compile 'org.primefaces:primefaces:5.2'
         compile 'org.primefaces.extensions:primefaces-extensions:3.0.0'
 
     }

@@ -46,6 +46,13 @@ Grails plugin integrating Primefaces into the Grails project
         // TODO Implement additions to web.xml (optional), this event occurs before
         def contextParam = xml.'context-param'
 
+		contextParam[contextParam.size() - 1] + {
+			'context-param' {
+				'param-name'('primefaces.FONT_AWESOME')
+				'param-value'('true')
+			}
+		}
+		
         if (Environment.current == Environment.PRODUCTION) {
             contextParam[contextParam.size() - 1] + {
                 'context-param' {
