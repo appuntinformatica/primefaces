@@ -18,8 +18,10 @@ try {
 		overwrite: true
 	)
 
+        ant.mkdir(dir:"${primefacesPluginDir}/web-app/js/primefaces")
+    
 	ant.copy(todir: "${baseDir}/web-app/js/primefaces") {
-		fileset(dir: "${primefacesPluginDir}/web-app/web-app/js/primefaces")
+            fileset(dir: "${primefacesPluginDir}/web-app/js/primefaces")
 	}
 	
 } catch (Throwable e) {

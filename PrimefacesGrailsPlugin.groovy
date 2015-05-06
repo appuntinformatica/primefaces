@@ -78,7 +78,11 @@ Grails plugin integrating Primefaces into the Grails project
     }
 
     def doWithSpring = {
-        // TODO Implement runtime spring config (optional)
+        customScopeConfigurer(org.springframework.beans.factory.config.CustomScopeConfigurer) {
+            scopes = [
+                "view": grails.plugins.primefaces.jsf.SpringViewScope
+            ]
+        }
     }
 
     def doWithDynamicMethods = { ctx ->
