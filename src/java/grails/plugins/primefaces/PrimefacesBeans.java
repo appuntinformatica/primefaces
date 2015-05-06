@@ -7,12 +7,14 @@ import java.lang.reflect.Field;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
+import javax.faces.bean.RequestScoped;
 import org.apache.log4j.Logger;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.config.BeanDefinition;
-import static org.springframework.beans.factory.config.BeanDefinition.SCOPE_SINGLETON;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.context.ApplicationContext;
@@ -62,9 +64,18 @@ public class PrimefacesBeans {
             log.error(ex.getMessage(), ex);
         }
     }
+    
+    private static BeanDefinitionRegistry getRegistry() {
+        ApplicationContext appContext = Holders.getApplicationContext();
+        BeanFactory factory = appContext.getAutowireCapableBeanFactory();                
+        BeanDefinitionRegistry registry = ((BeanDefinitionRegistry ) factory);
+        return registry;
+    }
+    
     private static void registryPrimefacesBeans(String packageName) {
         ClassPathScanningCandidateComponentProvider scanner = new ClassPathScanningCandidateComponentProvider(false);
         scanner.addIncludeFilter(new AnnotationTypeFilter(ManagedBean.class));
+       
         for (BeanDefinition bd : scanner.findCandidateComponents(packageName)) {
             log.info("beanClassName = " + bd.getBeanClassName());
             try {
@@ -76,12 +87,21 @@ public class PrimefacesBeans {
                 
                 BeanDefinitionRegistry registry = ((BeanDefinitionRegistry ) factory);
    
-                GenericBeanDefinition beanDefinition = new GenericBeanDefinition();  
+                GenericBeanDefinition beanDefinition = new GenericBeanDefinition();
                 beanDefinition.setBeanClass(clazz);  
                 beanDefinition.setLazyInit(false);  
                 beanDefinition.setAbstract(false);  
                 beanDefinition.setAutowireCandidate(true);
-                beanDefinition.setScope(SCOPE_SINGLETON);
+                for (Annotation a1 : clazz.getAnnotations()) {
+                    log.info("\t annotation: " + a1.annotationType());
+                    if (a1.annotationType() == SessionScoped.class) {
+                        beanDefinition.setScope("session");
+                    } else if (a1.annotationType() == ViewScoped.class) {
+                        beanDefinition.setScope("view");
+                    } else if (a1.annotationType() == RequestScoped.class) {
+                        beanDefinition.setScope("request");
+                    }
+                }
                 
                 String beanName = mb.name();
                 if (beanName.equals("")) {
@@ -106,7 +126,7 @@ public class PrimefacesBeans {
                                 ManagedProperty mp = (ManagedProperty) annotation;
                                 String propName = mp.value().replace("#{", "").replace("}", "");
                                 propertyValues.addPropertyValue(propName, appContext.getBean(propName));
-                            log.info("\t ManagedProperty annotation named '" + propName + "' [" + field.getType() + "] is created");
+                                log.info("\t ManagedProperty annotation named '" + propName + "' [" + field.getType() + "] is created");
                             } catch (NoSuchBeanDefinitionException ex) {
                                 log.warn(ex.getMessage());
                             }                       
