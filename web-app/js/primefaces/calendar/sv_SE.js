@@ -1,7 +1,7 @@
 PrimeFaces.locales ['sv_SE'] = {
     closeText: 'Stäng',
     prevText: 'Föregående',
-    nextText: 'Nästa',{code}
+    nextText: 'Nästa',
     monthNames: ['januari', 'februari', 'mars', 'april', 'maj', 'juni', 'juli', 'augusti', 'september', 'oktober', 'november', 'december' ],
     monthNamesShort: ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec' ],
     dayNames: ['söndag', 'måndag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lördag'],

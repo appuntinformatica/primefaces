@@ -52,7 +52,6 @@ Grails plugin integrating Primefaces into the Grails project
 				'param-value'('true')
 			}
 		}
-		
         if (Environment.current == Environment.PRODUCTION) {
             contextParam[contextParam.size() - 1] + {
                 'context-param' {
@@ -68,7 +67,6 @@ Grails plugin integrating Primefaces into the Grails project
                 }
             }
         } 
-
         def listenerNode = xml.'listener'
         listenerNode[listenerNode.size() - 1] + {
             listener {

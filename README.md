@@ -7,8 +7,8 @@
 		The minimum Grails version is 2.3.7 with Java JDK 1.7 and the dependencies have versions:
 		<ul>
 			<li>Core JSF 2.2</li>
-			<li>Primefaces 5.1</li>
-			<li>Apache MyFaces 2.2.5</li>
+			<li>Primefaces 5.2</li>
+			<li>Apache MyFaces 2.2.8</li>
 		</ul>
 		<br>
 		Source code can be found at <a href="https://github.com/andreaminnucci77/primefaces">Github</a>
